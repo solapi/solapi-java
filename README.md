@@ -1,15 +1,22 @@
-# Solapi-JAVA-Example
+# SOLAPI SDK for Java
 
 [![Java 9.0](https://img.shields.io/badge/Java-v9.0-red.svg)](https://www.oracle.com/technetwork/java/javase/downloads/jdk9-downloads-3848520.html)
 
-## 사용 준비
-- [ ] [config.ini](https://github.com/solapi/examples/blob/java/java/src/config.ini)에 정보 입력
-  - [ ] ApiKey
-  - [ ] ApiSecret
+## 설정
+`app/config.ini` 파일의 설정이 맞는지 확인하고 적절히 수정해 주세요.
 
-- [ ] 각 Example 사용 시 필요한 정보 (Message ID, Group ID, to, from, text 등) 입력
+## 예제 파일 실행
+`app/src/main/java/solapi/app/` 아래 예제 파일이 위치해 있습니다. gradle을 이용해서 실행 하려면 app/build.gradle 파일 내용 중 mainClass를 수정해 주세요.
 
-## 필요한 Library
-### [/lib/*](https://github.com/solapi/examples/tree/java/java/lib)
+```
+application {
+    // Define the main class for the application.
+    mainClass = 'solapi.app.GetMessageList'
+}
+```
 
-![libimage](./image/lib.png)
+아래 명령으로 실행합니다.
+
+```
+./gradlew run
+```
