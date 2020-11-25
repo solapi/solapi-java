@@ -1,27 +1,35 @@
 package model.response;
 
 public class ImageListItem {
-    File file;
-    boolean delflag;
+    String type;
+    String originalName;
+    int width = 0;
+    int height = 0;
+    int fileSize = 0;
+    String fileId;
     String accountId;
+    String name;
     String dateCreated;
     String dateUpdated;
-    String imageId;
+
+    public String getType() {
+        return type;
+    }
+
+    public String getOriginalName() {
+        return originalName;
+    }
 
     public String getFileName() {
-        return file.getName();
+        return name;
     }
 
     public long getFileSize() {
-        return file.getSize();
-    }
-
-    public boolean getDelFlag() {
-        return delflag;
+        return fileSize;
     }
 
     public String getImageId() {
-        return imageId;
+        return fileId;
     }
 
     public String getAccountId() {

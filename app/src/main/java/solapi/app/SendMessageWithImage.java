@@ -15,7 +15,7 @@ import utilities.APIInit;
 
 public class SendMessageWithImage {
     public static void main(String[] args) {
-        File imgFile = new File("src/image/testImage.jpg");
+        File imgFile = new File("../images/testImage.jpg");
         long length = imgFile.length();
         byte[] imageByte = new byte[(int) length];
         FileInputStream fis = null;
@@ -24,7 +24,7 @@ public class SendMessageWithImage {
             fis.read(imageByte);
         } catch (Exception e) {
 //            혹시 FileNotFoundException이 뜬다면 아래의 코드로 경로를 확인해보고 맞추시면 됩니다.
-//            System.out.println(new File("src/image/testImage.jpg").getAbsoluteFile());
+//            System.out.println(new File("../images/testImage.jpg").getAbsoluteFile());
             e.printStackTrace();
         }
         String result = new String(Base64.encodeBase64(imageByte));

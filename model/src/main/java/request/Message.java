@@ -4,11 +4,20 @@ import com.google.gson.JsonObject;
 
 public class Message {
     private JsonObject message = new JsonObject();
+
     // SMS일 경우는 발신,수신 번호와 내용만 넣으시면 됩니다.
     public Message(String to, String from, String text) {
         this.message.addProperty("to", to);
         this.message.addProperty("from", from);
         this.message.addProperty("text", text);
+    }
+
+    // kakaoOptions
+    public Message(String to, String from, String text, KakaoOptions kakaoOptions) {
+        this.message.addProperty("to", to);
+        this.message.addProperty("from", from);
+        this.message.addProperty("text", text);
+        this.message.add("kakaoOptions", kakaoOptions.toJson());
     }
 
     // LMS일 경우 subject에 제목을 넣어주세요
@@ -28,5 +37,9 @@ public class Message {
         this.message.addProperty("subject", subject);
         this.message.addProperty("imageId", imageId);
         this.message.addProperty("type", "MMS");
+    }
+
+    public JsonObject toJson() {
+        return this.message;
     }
 }

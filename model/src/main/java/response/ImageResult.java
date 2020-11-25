@@ -1,9 +1,9 @@
 package model.response;
 
 public class ImageResult {
-    String imageId = "";
+    String fileId = "";
 
     public String getImageId() {
-        return imageId;
+        return fileId;
     }
 }

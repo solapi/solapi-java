@@ -2,7 +2,8 @@ package model.request;
 
 public class ImageModel {
     public ImageModel(String base64encoded) {
-        image = base64encoded;
+        file = base64encoded;
     }
-    String image;
+    String file;
+    String type = "MMS";
 }

@@ -1,33 +1,39 @@
 package solapi.app;
 
+import com.google.gson.Gson;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import java.util.ArrayList;
+import model.response.GetImageListModel;
 import model.response.ImageListItem;
 import utilities.APIInit;
 
 public class GetImageList {
     public static void main(String[] args) {
-        Call<ArrayList<ImageListItem>> api = APIInit.getImageAPI().getImageList(APIInit.getHeaders());
-        api.enqueue(new Callback<ArrayList<ImageListItem>>() {
+        Gson gson = new Gson();
+        Call<GetImageListModel> api = APIInit.getImageAPI().getImageList(APIInit.getHeaders());
+        api.enqueue(new Callback<GetImageListModel>() {
             @Override
-            public void onResponse(Call<ArrayList<ImageListItem>> call, Response<ArrayList<ImageListItem>> response) {
+            public void onResponse(Call<GetImageListModel> call, Response<GetImageListModel> response) {
                 System.out.println(response.code());
-                for(ImageListItem resultItem : response.body()) {
-                    System.out.println("accountId : " + resultItem.getAccountId());
-                    System.out.println("imageId : " + resultItem.getImageId());
-                    System.out.println("fileName : " + resultItem.getFileName());
-                    System.out.println("fileSize : " + resultItem.getFileSize());
-                    System.out.println("delflag : " + resultItem.getDelFlag());
-                    System.out.println("dateCreated : " + resultItem.getDateCreated());
-                    System.out.println("dateUpdated : " + resultItem.getDateUpdated());
+                GetImageListModel body = response.body();
+                System.out.println("startKey: " + body.getStartKey());
+                System.out.println("nextKey: " + body.getNextKey());
+                for (ImageListItem item: body.getImageList()) {
+                    System.out.println("type : " + item.getType());
+                    System.out.println("imageId : " + item.getImageId());
+                    System.out.println("accountId : " + item.getAccountId());
+                    System.out.println("fileName : " + item.getFileName());
+                    System.out.println("originalFileName : " + item.getOriginalName());
+                    System.out.println("fileSize : " + item.getFileSize());
+                    System.out.println("dateCreated : " + item.getDateCreated());
+                    System.out.println("dateUpdated : " + item.getDateUpdated());
                     System.out.println();
                 }
             }
 
             @Override
-            public void onFailure(Call<ArrayList<ImageListItem>> call, Throwable throwable) {
+            public void onFailure(Call<GetImageListModel> call, Throwable throwable) {
                 throwable.printStackTrace();
             }
         });
