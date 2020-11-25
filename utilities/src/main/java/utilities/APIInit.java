@@ -67,7 +67,7 @@ public class APIInit {
 
         String domain = "api.solapi.com";
         String protocol = "https";
-        String prefix = "";
+        String prefix = "/";
 
         try {
             Ini ini = new Ini(new File("config.ini"));
