@@ -39,6 +39,10 @@ public class Message {
         this.message.addProperty("type", "MMS");
     }
 
+    public void setCountry(String country) {
+        this.message.addProperty("country", country);
+    }
+
     public JsonObject toJson() {
         return this.message;
     }
