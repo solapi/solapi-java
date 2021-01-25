@@ -7,3 +7,5 @@ dump.rdb
 
 # Ignore Gradle build output directory
 build
+
+app/config.ini

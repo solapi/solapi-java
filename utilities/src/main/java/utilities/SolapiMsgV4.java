@@ -8,6 +8,7 @@ import model.response.GetMessageListModel;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.*;
+import com.google.gson.JsonObject;
 
 // 문서 : https://docs.solapi.com/rest-api-reference/message-api-v4
 // 일부 API는 Query Parameter를 추가로 사용할 수 있습니다.
@@ -16,6 +17,10 @@ public interface SolapiMsgV4 {
     @POST("messages/v4/send")
     Call<MessageModel> sendMessage(@Header("Authorization") String auth,
                                    @Body Message message);
+    // 여러건 발송
+    @POST("messages/v4/send-many")
+    Call<GroupModel> sendMessages(@Header("Authorization") String auth,
+                                   @Body JsonObject messages);
     // 그룹 메시지 - 그룹 생성
     @POST("messages/v4/groups")
     Call<GroupModel> createGroup(@Header("Authorization") String auth);
