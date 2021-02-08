@@ -1,5 +1,7 @@
 package model.response;
 
+import com.google.gson.JsonObject;
+
 public class MessageModel {
     private String groupId;
     private String messageId;
@@ -11,6 +13,8 @@ public class MessageModel {
     private String customFields;
     private String country;
     private String accountId;
+    private JsonObject customFields;
+
 
     public String getAccountId() {
         return accountId;
@@ -40,7 +44,7 @@ public class MessageModel {
         return from;
     }
 
-    public String getCustomFields() {
+    public JsonObject getCustomFields() {
         return customFields;
     }
 
