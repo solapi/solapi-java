@@ -43,6 +43,10 @@ public class Message {
         this.message.addProperty("country", country);
     }
 
+    public void setCustomFields(JsonObject customFields) {
+        this.message.add("customFields", customFields);
+    }
+
     public JsonObject toJson() {
         return this.message;
     }
