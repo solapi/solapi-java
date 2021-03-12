@@ -63,4 +63,15 @@ public interface SolapiMsgV4 {
     @GET("/kakao/v1/plus-friends/{pfId}")
     Call<KakaotalkChannel> getKakaotalkChannel(@Header("Authorization") String auth,
                                                @Path("pfId") String pfId);
+    // 카카오톡 알림톡 템플릿 목록 조회
+    @GET("/kakao/v1/templates")
+    Call<KakaoTemplateList> getKakaoTemplates(@Header("Authorization") String auth);
+
+    @GET("/kakao/v1/templates")
+    Call<KakaoTemplateList> getKakaoTemplates(@Header("Authorization") String auth,
+                                               @Query("pfId") String pfId);
+    @GET("/kakao/v1/templates")
+    Call<KakaoTemplateList> getKakaoTemplates(@Header("Authorization") String auth,
+                                               @Query("pfId") String pfId,
+                                               @Query("status") String status);
 }

@@ -69,7 +69,41 @@ public class SendJsonLMS {
                     GroupModel body = response.body();
                     System.out.println("groupId : " + body.getGroupId());
                     System.out.println("status: " + body.getStatus());
-                    System.out.println("count: " + body.getCount().toString());
+
+                    JsonObject count = body.getCount();
+                    System.out.println("발송건수");
+                    System.out.println(" - Total: " + count.get("total"));
+                    System.out.println(" - 발송건수(전체): " + count.get("sentTotal"));
+                    System.out.println(" - 발송실패: " + count.get("sentFailed"));
+                    System.out.println(" - 발송성공: " + count.get("sentSuccess"));
+                    System.out.println(" - 발송중: " + count.get("sentPending"));
+                    System.out.println(" - 대체발송: " + count.get("sentReplacement"));
+                    System.out.println(" - 환급: " + count.get("refund"));
+                    System.out.println(" - 접수실패: " + count.get("registeredFailed"));
+                    System.out.println(" - 접수성공: " + count.get("registeredSuccess"));
+
+                    JsonObject countForCharge = body.getCountForCharge();
+                    System.out.println("타입별 건수");
+                    System.out.println(" - SMS: " + countForCharge.get("sms")); // 국가: 건수 형식
+                    System.out.println(" - LMS: " + countForCharge.get("lms"));
+                    System.out.println(" - MMS: " + countForCharge.get("mms"));
+                    System.out.println(" - ATA: " + countForCharge.get("ata"));
+                    System.out.println(" - CTA: " + countForCharge.get("cta"));
+                    System.out.println(" - NSA: " + countForCharge.get("nsa"));
+
+                    JsonObject balance = body.getBalance();
+                    System.out.println("차감 잔액");
+                    System.out.println(" - 예상 차감액: " + balance.get("requested"));
+                    System.out.println(" - 대체발송: " + balance.get("replacement"));
+                    System.out.println(" - 환급: " + balance.get("refund"));
+                    System.out.println(" - 합계: " + balance.get("sum"));
+
+                    JsonObject point = body.getPoint();
+                    System.out.println("차감 포인트");
+                    System.out.println(" - 예상 차감 포인트: " + point.get("requested"));
+                    System.out.println(" - 대체발송: " + point.get("replacement"));
+                    System.out.println(" - 환급: " + point.get("refund"));
+                    System.out.println(" - 합계: " + point.get("sum"));
                 } else {
                     try {
                         System.out.println(response.errorBody().string());
