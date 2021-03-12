@@ -14,6 +14,7 @@ SendJsonAlimtalkButton.java     알림톡 버튼 발송
 SendJsonChingutalk.java         친구톡 발송
 SendJsonChingutalkButton.java   친구톡 버튼 발송
 GetKakaotalkChannel.java        카카오톡채널 정보 조회
+GetKakaoTemplates.java          알림톡 템플릿 목록 조회
 ```
 
 ### 그룹 발송
