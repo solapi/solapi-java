@@ -10,7 +10,6 @@ public class MessageModel {
     private String to;
     private String type;
     private String from;
-    private String customFields;
     private String country;
     private String accountId;
     private JsonObject customFields;

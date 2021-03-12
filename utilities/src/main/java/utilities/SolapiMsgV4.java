@@ -4,7 +4,6 @@ import model.request.MessageIds;
 import model.request.Message;
 import model.request.MessageList;
 import model.response.*;
-import model.response.GetMessageListModel;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.*;
@@ -59,4 +58,9 @@ public interface SolapiMsgV4 {
     // 메시지 조회
     @GET("messages/v4/list")
     Call<GetMessageListModel> getMessageList(@Header("Authorization") String auth);
+
+    // 카카오톡채널 연동 정보 조회
+    @GET("/kakao/v1/plus-friends/{pfId}")
+    Call<KakaotalkChannel> getKakaotalkChannel(@Header("Authorization") String auth,
+                                               @Path("pfId") String pfId);
 }
