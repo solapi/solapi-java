@@ -65,13 +65,26 @@ public interface SolapiMsgV4 {
                                                @Path("pfId") String pfId);
     // 카카오톡 알림톡 템플릿 목록 조회
     @GET("/kakao/v1/templates")
-    Call<KakaoTemplateList> getKakaoTemplates(@Header("Authorization") String auth);
+    Call<KakaoTemplateList> getKakaoTemplateList(@Header("Authorization") String auth);
 
     @GET("/kakao/v1/templates")
-    Call<KakaoTemplateList> getKakaoTemplates(@Header("Authorization") String auth,
+    Call<KakaoTemplateList> getKakaoTemplateList(@Header("Authorization") String auth,
                                                @Query("pfId") String pfId);
     @GET("/kakao/v1/templates")
-    Call<KakaoTemplateList> getKakaoTemplates(@Header("Authorization") String auth,
+    Call<KakaoTemplateList> getKakaoTemplateList(@Header("Authorization") String auth,
                                                @Query("pfId") String pfId,
                                                @Query("status") String status);
+    // 알림톡 템플릿 정보 조회
+    @GET("/kakao/v1/templates/{templateId}")
+    Call<KakaoTemplate> getKakaoTemplate(@Header("Authorization") String auth,
+                                               @Path("templateId") String templateId);
+
+    // 단가 조회
+    @GET("/pricing/v1/messaging")
+    Call<UnitPrice> getUnitPrice(@Header("Authorization") String auth);
+
+    // 잔액 조회
+    @GET("/cash/v1/balance")
+    Call<Balance> getBalance(@Header("Authorization") String auth);
+
 }
