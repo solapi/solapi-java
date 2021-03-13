@@ -10,20 +10,17 @@ import model.response.KakaoTemplateList;
 import model.response.KakaoTemplate;
 import utilities.APIInit;
 
-public class GetKakaoTemplates {
+public class GetKakaoTemplateList {
     public static void main(String[] args) {
         // 등록된 전체 템플릿 조회
-        Call<KakaoTemplateList> api = APIInit.getAPI().getKakaoTemplates(APIInit.getHeaders());
+        Call<KakaoTemplateList> api = APIInit.getAPI().getKakaoTemplateList(APIInit.getHeaders());
         // 특정 PFID로 조회
-        // Call<KakaoTemplateList> api = APIInit.getAPI().getKakaoTemplates(APIInit.getHeaders(), "[PFID 값을 입력하세요]");
+        // Call<KakaoTemplateList> api = APIInit.getAPI().getKakaoTemplateList(APIInit.getHeaders(), "[PFID 값을 입력하세요]");
         // 상태값으로 조회
-        // Call<KakaoTemplateList> api = APIInit.getAPI().getKakaoTemplates(APIInit.getHeaders(), null, "상태값:APPROVED|PENDING");
+        // Call<KakaoTemplateList> api = APIInit.getAPI().getKakaoTemplateList(APIInit.getHeaders(), null, "상태값:APPROVED|PENDING");
         // 승인된 템플릿만 조회
-        // Call<KakaoTemplateList> api = APIInit.getAPI().getKakaoTemplates(APIInit.getHeaders(), null, "APPROVED");
-        getKakaoTemplateList(api);
-    }
+        // Call<KakaoTemplateList> api = APIInit.getAPI().getKakaoTemplateList(APIInit.getHeaders(), null, "APPROVED");
 
-    static void getKakaoTemplateList(Call<KakaoTemplateList> api) {
         api.enqueue(new Callback<KakaoTemplateList>() {
             @Override
             public void onResponse(Call<KakaoTemplateList> call, Response<KakaoTemplateList> response) {
