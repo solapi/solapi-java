@@ -2,6 +2,7 @@ out/
 .idea/
 *.iml
 dump.rdb
+.DS_Store
 # Ignore Gradle project-specific cache directory
 .gradle
 
@@ -9,3 +10,4 @@ dump.rdb
 build
 
 app/config.ini
+*Real.java
