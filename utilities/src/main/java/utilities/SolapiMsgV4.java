@@ -59,6 +59,25 @@ public interface SolapiMsgV4 {
     @GET("messages/v4/list")
     Call<GetMessageListModel> getMessageList(@Header("Authorization") String auth);
 
+    @GET("messages/v4/list")
+    Call<GetMessageListModel> getMessageList(@Header("Authorization") String auth,
+                                             @Query("limit") int limit,
+                                             @Query("startKey") String startKey);
+
+    @GET("messages/v4/list")
+    Call<GetMessageListModel> getMessageByMID(@Header("Authorization") String auth,
+                                             @Query("messageId") String messageId);
+
+    @GET("messages/v4/list")
+    Call<GetMessageListModel> getMessageByGID(@Header("Authorization") String auth,
+                                             @Query("groupId") String groupId);
+
+    @GET("messages/v4/list")
+    Call<GetMessageListModel> getMessageByGID(@Header("Authorization") String auth,
+                                             @Query("groupId") String groupId,
+                                             @Query("limit") int limit,
+                                             @Query("startKey") String startKey);
+
     // 카카오톡채널 연동 정보 조회
     @GET("/kakao/v1/plus-friends/{pfId}")
     Call<KakaotalkChannel> getKakaotalkChannel(@Header("Authorization") String auth,

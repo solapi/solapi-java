@@ -1,10 +1,13 @@
 ### 문자 발송 예제
 ```
-SendJsonSMS.java              SMS 발송 예제
-SendJsonLMS.java              LMS 발송 예제
-SendJsonMMS.java              MMS 발송 예제
-SendJsonOversea.java          해외 SMS 발송 예제
-GetMessageList.java           발송 목록
+SendJsonSMS.java                    SMS 발송 예제
+SendJsonLMS.java                    LMS 발송 예제
+SendJsonMMS.java                    MMS 발송 예제
+SendJsonOversea.java                해외 SMS 발송 예제
+GetMessageList.java                 발송 목록
+message-list/Pagination.java        페이지 처리 예제
+message-list/SearchGroupId.java     그룹아이디로 조회
+message-list/SearchMessageId.java   메시지아이디로 조회
 ```
 
 ### 카카오톡 예제

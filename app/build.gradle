@@ -13,5 +13,6 @@ dependencies {
 
 application {
     // Define the main class for the application.
+    // mainClass = 'solapi.app.message.list.SearchMessageId'
     mainClass = 'solapi.app.SendJsonSMS'
 }
