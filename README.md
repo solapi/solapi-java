@@ -2,6 +2,10 @@
 
 [![Java 9.0](https://img.shields.io/badge/Java-v9.0-red.svg)](https://www.oracle.com/technetwork/java/javase/downloads/jdk9-downloads-3848520.html)
 
+## 주의사항
+* 예제 실행 시 반드시 JDK 9 버전 이상으로 실행해야 정상적으로 작동합니다.
+* 윈도우에서 `error: unmappable character (0xEC) for encoding x-windows-949` 에러가 발생하는 경우 환경변수 내 시스템 변수에 `GRADLEGRADLE_OPTS=-Dfile.encoding=UTF-8`을 추가 해주세요. 
+
 ## 설정
 `app/config.ini` 파일의 설정이 맞는지 확인하고 적절히 수정해 주세요.
 
