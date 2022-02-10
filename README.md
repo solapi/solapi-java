@@ -1,6 +1,11 @@
 # SOLAPI SDK for Java
 
-[![Java 9.0](https://img.shields.io/badge/Java-v9.0-red.svg)](https://www.oracle.com/technetwork/java/javase/downloads/jdk9-downloads-3848520.html)
+[![Java 9.0](https://img.shields.io/badge/Java-v9.0-red.svg)](https://www.oracle.com/technetwork/java/javase/downloads/jdk9-downloads-3848520.html)  
+
+# 🛑 현재 해당 예제는 유지보수가 중단되었습니다!
+
+## 최신 예제 링크  
+[Java Spring Example](https://github.com/solapi/java-sdk-v4-spring-example)
 
 ## 주의사항
 * 예제 실행 시 반드시 JDK 9 버전 이상으로 실행해야 정상적으로 작동합니다.
